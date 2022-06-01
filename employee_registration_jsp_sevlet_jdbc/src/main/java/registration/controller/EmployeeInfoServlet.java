@@ -21,32 +21,36 @@ public class EmployeeInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EmployeeServiceImpl employeeService;
 	private List<Employee> employeeList;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
 //    public EmployeeInfoServlet() {
 //        super();
 //        // TODO Auto-generated constructor stub
 //    }
-	
+
 	public void init() {
 		employeeService = new EmployeeServiceImpl();
-		employeeList =  null;
-    }
+		employeeList = null;
+	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		try {
 			employeeList = employeeService.retrieveEmployee(EmployeeRegistrationServlet.departmentList);
